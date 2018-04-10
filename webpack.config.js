@@ -9,7 +9,7 @@ module.exports  = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'public')
   },
-  watch: true,
+//  watch: true,
   module:{
     loaders: [
       {

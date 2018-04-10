@@ -16,7 +16,7 @@ app.use(express.static(path.resolve(__dirname + '/public/')))
 
 // APIs
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/bookshop');
+mongoose.connect('mongodb://bubbavader:DarthVader@ds135797.mlab.com:35797/bookshop');
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, '# MongoDB - connection error: '));

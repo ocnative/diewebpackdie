@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon apiServer.js"
+    "start": "node apiServer.js",
+    "prestart": "webpack -p",
+    "dev": "nodemon apiServer.js",    
+    "watch": "webpack --watch"
   },
   "devDependencies": {
     "nodemon": "^1.11.0",
