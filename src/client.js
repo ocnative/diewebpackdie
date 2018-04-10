@@ -18,7 +18,7 @@ import {addToCart} from './actions/cartActions';
 const middleware =applyMiddleware(thunk, logger());
 const store = createStore(reducers, middleware);
 
-import BooksList from './components/pages/bookslist';
+import BooksList from './components/pages/booksList';
 import Cart from './components/pages/cart';
 import BooksForm from './components/pages/booksForm';
 import Main from './main';

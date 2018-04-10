@@ -23551,242 +23551,7 @@ exports.default = function () {
 };
 
 /***/ }),
-/* 259 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRedux = __webpack_require__(41);
-
-var _booksActions = __webpack_require__(159);
-
-var _redux = __webpack_require__(32);
-
-var _reactBootstrap = __webpack_require__(45);
-
-var _bookItem = __webpack_require__(287);
-
-var _bookItem2 = _interopRequireDefault(_bookItem);
-
-var _booksForm = __webpack_require__(152);
-
-var _booksForm2 = _interopRequireDefault(_booksForm);
-
-var _cart = __webpack_require__(153);
-
-var _cart2 = _interopRequireDefault(_cart);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var BooksList = function (_React$Component) {
-  _inherits(BooksList, _React$Component);
-
-  function BooksList() {
-    _classCallCheck(this, BooksList);
-
-    return _possibleConstructorReturn(this, (BooksList.__proto__ || Object.getPrototypeOf(BooksList)).apply(this, arguments));
-  }
-
-  _createClass(BooksList, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      this.props.getBooks();
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-
-      console.log("HOW STATE LOOKS LIKE", this.props.state);
-      console.log("HOW STATE.BOOKS LOOKS LIKE", this.props.stateBooks);
-      console.log("HOW STATE.BOOKS.BOOKS LOOKS LIKE", this.props.stateBooksBooks);
-
-      var booksList = this.props.books.map(function (booksArr) {
-        return _react2.default.createElement(
-          _reactBootstrap.Col,
-          { xs: 12, sm: 6, md: 3, key: booksArr._id },
-          _react2.default.createElement(_bookItem2.default, {
-            _id: booksArr._id,
-            title: booksArr.title,
-            description: booksArr.description,
-            images: booksArr.images,
-            price: booksArr.price })
-        );
-      });
-      return _react2.default.createElement(
-        _reactBootstrap.Grid,
-        null,
-        _react2.default.createElement(
-          _reactBootstrap.Row,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Carousel,
-            null,
-            _react2.default.createElement(
-              _reactBootstrap.Carousel.Item,
-              null,
-              _react2.default.createElement('img', { width: 900, height: 300, alt: '900x300', src: '/images/home1.jpg' }),
-              _react2.default.createElement(
-                _reactBootstrap.Carousel.Caption,
-                null,
-                _react2.default.createElement(
-                  'h3',
-                  null,
-                  'Are you scared?'
-                ),
-                _react2.default.createElement(
-                  'p',
-                  null,
-                  'You better be.'
-                )
-              )
-            ),
-            _react2.default.createElement(
-              _reactBootstrap.Carousel.Item,
-              null,
-              _react2.default.createElement('img', { width: 900, height: 300, alt: '900x300', src: '/images/home2.jpg' }),
-              _react2.default.createElement(
-                _reactBootstrap.Carousel.Caption,
-                null,
-                _react2.default.createElement(
-                  'h3',
-                  null,
-                  'You saw nothing'
-                ),
-                _react2.default.createElement(
-                  'p',
-                  null,
-                  'Laser cat clouds your mind...'
-                )
-              )
-            ),
-            _react2.default.createElement(
-              _reactBootstrap.Carousel.Item,
-              null,
-              _react2.default.createElement('img', { width: 900, height: 300, alt: '900x300', src: '/images/home3.jpg' }),
-              _react2.default.createElement(
-                _reactBootstrap.Carousel.Caption,
-                null,
-                _react2.default.createElement(
-                  'h3',
-                  null,
-                  '"...and there was NO cat food inside!"'
-                ),
-                _react2.default.createElement(
-                  'p',
-                  null,
-                  'Scariest story ever.'
-                )
-              )
-            ),
-            _react2.default.createElement(
-              _reactBootstrap.Carousel.Item,
-              null,
-              _react2.default.createElement('img', { width: 900, height: 300, alt: '900x300', src: '/images/home4.jpg' }),
-              _react2.default.createElement(
-                _reactBootstrap.Carousel.Caption,
-                null,
-                _react2.default.createElement(
-                  'h3',
-                  null,
-                  'Yes, I am vampire.'
-                ),
-                _react2.default.createElement(
-                  'p',
-                  null,
-                  'Show me your neck.'
-                )
-              )
-            ),
-            _react2.default.createElement(
-              _reactBootstrap.Carousel.Item,
-              null,
-              _react2.default.createElement('img', { width: 900, height: 300, alt: '900x300', src: '/images/home5.jpg' }),
-              _react2.default.createElement(
-                _reactBootstrap.Carousel.Caption,
-                null,
-                _react2.default.createElement(
-                  'h3',
-                  null,
-                  'You woke me up why?'
-                ),
-                _react2.default.createElement(
-                  'p',
-                  null,
-                  'Angry kitten will eat your shoes.'
-                )
-              )
-            ),
-            _react2.default.createElement(
-              _reactBootstrap.Carousel.Item,
-              null,
-              _react2.default.createElement('img', { width: 900, height: 300, alt: '900x300', src: '/images/home6.jpg' }),
-              _react2.default.createElement(
-                _reactBootstrap.Carousel.Caption,
-                null,
-                _react2.default.createElement(
-                  'h3',
-                  null,
-                  'RAWR!!!'
-                ),
-                _react2.default.createElement(
-                  'p',
-                  null,
-                  'What part of "NO bath!" did you not understand?'
-                )
-              )
-            )
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.Row,
-          null,
-          _react2.default.createElement(_cart2.default, null)
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.Row,
-          { style: { marginTop: '15px' } },
-          booksList
-        )
-      );
-    }
-  }]);
-
-  return BooksList;
-}(_react2.default.Component);
-
-function mapStateToProps(state) {
-  return {
-    books: state.books.books,
-    state: state,
-    stateBooks: state.books,
-    stateBooksBooks: state.books.books
-  };
-}
-function mapDispatchToProps(dispatch) {
-  return (0, _redux.bindActionCreators)({
-    getBooks: _booksActions.getBooks
-  }, dispatch);
-}
-exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(BooksList);
-
-/***/ }),
+/* 259 */,
 /* 260 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -25187,9 +24952,9 @@ var _index2 = _interopRequireDefault(_index);
 
 var _cartActions = __webpack_require__(74);
 
-var _bookslist = __webpack_require__(259);
+var _booksList = __webpack_require__(576);
 
-var _bookslist2 = _interopRequireDefault(_bookslist);
+var _booksList2 = _interopRequireDefault(_booksList);
 
 var _cart = __webpack_require__(153);
 
@@ -25233,7 +24998,7 @@ var Routes = _react2.default.createElement(
     _react2.default.createElement(
       _reactRouter.Route,
       { path: '/', component: _main2.default },
-      _react2.default.createElement(_reactRouter.IndexRoute, { component: _bookslist2.default }),
+      _react2.default.createElement(_reactRouter.IndexRoute, { component: _booksList2.default }),
       _react2.default.createElement(_reactRouter.Route, { path: '/admin', component: _booksForm2.default }),
       _react2.default.createElement(_reactRouter.Route, { path: '/cart', component: _cart2.default }),
       _react2.default.createElement(_reactRouter.Route, { path: '/contact', component: _contact2.default }),
@@ -51725,6 +51490,242 @@ module.exports = function(originalModule) {
 	return module;
 };
 
+
+/***/ }),
+/* 576 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(41);
+
+var _booksActions = __webpack_require__(159);
+
+var _redux = __webpack_require__(32);
+
+var _reactBootstrap = __webpack_require__(45);
+
+var _bookItem = __webpack_require__(287);
+
+var _bookItem2 = _interopRequireDefault(_bookItem);
+
+var _booksForm = __webpack_require__(152);
+
+var _booksForm2 = _interopRequireDefault(_booksForm);
+
+var _cart = __webpack_require__(153);
+
+var _cart2 = _interopRequireDefault(_cart);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var BooksList = function (_React$Component) {
+  _inherits(BooksList, _React$Component);
+
+  function BooksList() {
+    _classCallCheck(this, BooksList);
+
+    return _possibleConstructorReturn(this, (BooksList.__proto__ || Object.getPrototypeOf(BooksList)).apply(this, arguments));
+  }
+
+  _createClass(BooksList, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.props.getBooks();
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+
+      console.log("HOW STATE LOOKS LIKE", this.props.state);
+      console.log("HOW STATE.BOOKS LOOKS LIKE", this.props.stateBooks);
+      console.log("HOW STATE.BOOKS.BOOKS LOOKS LIKE", this.props.stateBooksBooks);
+
+      var booksList = this.props.books.map(function (booksArr) {
+        return _react2.default.createElement(
+          _reactBootstrap.Col,
+          { xs: 12, sm: 6, md: 3, key: booksArr._id },
+          _react2.default.createElement(_bookItem2.default, {
+            _id: booksArr._id,
+            title: booksArr.title,
+            description: booksArr.description,
+            images: booksArr.images,
+            price: booksArr.price })
+        );
+      });
+      return _react2.default.createElement(
+        _reactBootstrap.Grid,
+        null,
+        _react2.default.createElement(
+          _reactBootstrap.Row,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Carousel,
+            null,
+            _react2.default.createElement(
+              _reactBootstrap.Carousel.Item,
+              null,
+              _react2.default.createElement('img', { width: 900, height: 300, alt: '900x300', src: '/images/home1.jpg' }),
+              _react2.default.createElement(
+                _reactBootstrap.Carousel.Caption,
+                null,
+                _react2.default.createElement(
+                  'h3',
+                  null,
+                  'Are you scared?'
+                ),
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  'You better be.'
+                )
+              )
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.Carousel.Item,
+              null,
+              _react2.default.createElement('img', { width: 900, height: 300, alt: '900x300', src: '/images/home2.jpg' }),
+              _react2.default.createElement(
+                _reactBootstrap.Carousel.Caption,
+                null,
+                _react2.default.createElement(
+                  'h3',
+                  null,
+                  'You saw nothing'
+                ),
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  'Laser cat clouds your mind...'
+                )
+              )
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.Carousel.Item,
+              null,
+              _react2.default.createElement('img', { width: 900, height: 300, alt: '900x300', src: '/images/home3.jpg' }),
+              _react2.default.createElement(
+                _reactBootstrap.Carousel.Caption,
+                null,
+                _react2.default.createElement(
+                  'h3',
+                  null,
+                  '"...and there was NO cat food inside!"'
+                ),
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  'Scariest story ever.'
+                )
+              )
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.Carousel.Item,
+              null,
+              _react2.default.createElement('img', { width: 900, height: 300, alt: '900x300', src: '/images/home4.jpg' }),
+              _react2.default.createElement(
+                _reactBootstrap.Carousel.Caption,
+                null,
+                _react2.default.createElement(
+                  'h3',
+                  null,
+                  'Yes, I am vampire.'
+                ),
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  'Show me your neck.'
+                )
+              )
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.Carousel.Item,
+              null,
+              _react2.default.createElement('img', { width: 900, height: 300, alt: '900x300', src: '/images/home5.jpg' }),
+              _react2.default.createElement(
+                _reactBootstrap.Carousel.Caption,
+                null,
+                _react2.default.createElement(
+                  'h3',
+                  null,
+                  'You woke me up why?'
+                ),
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  'Angry kitten will eat your shoes.'
+                )
+              )
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.Carousel.Item,
+              null,
+              _react2.default.createElement('img', { width: 900, height: 300, alt: '900x300', src: '/images/home6.jpg' }),
+              _react2.default.createElement(
+                _reactBootstrap.Carousel.Caption,
+                null,
+                _react2.default.createElement(
+                  'h3',
+                  null,
+                  'RAWR!!!'
+                ),
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  'What part of "NO bath!" did you not understand?'
+                )
+              )
+            )
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.Row,
+          null,
+          _react2.default.createElement(_cart2.default, null)
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.Row,
+          { style: { marginTop: '15px' } },
+          booksList
+        )
+      );
+    }
+  }]);
+
+  return BooksList;
+}(_react2.default.Component);
+
+function mapStateToProps(state) {
+  return {
+    books: state.books.books,
+    state: state,
+    stateBooks: state.books,
+    stateBooksBooks: state.books.books
+  };
+}
+function mapDispatchToProps(dispatch) {
+  return (0, _redux.bindActionCreators)({
+    getBooks: _booksActions.getBooks
+  }, dispatch);
+}
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(BooksList);
 
 /***/ })
 /******/ ]);
