@@ -123,7 +123,7 @@ app.put('/api/books/:_id', function(req, res){
 
     const mailOptions = {
       from: 'ocnative007@gmail.com',
-      to: 'abdulmujeebj@gmail.com, lrpc949@gmail.com',
+      to: 'lrpc949@gmail.com',
       subject: 'New Inquiry mail from website.com',
       html: `<h3>Name:</h3> ${req.body.name}` +
             `<h3>Email:</h3> ${req.body.email}` +
