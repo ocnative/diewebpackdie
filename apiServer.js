@@ -171,7 +171,7 @@ app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname + '/public/index.html'))
 })
 
-app.listen(3000, function(err){
+app.listen(process.env.PORT || 3000, function(err){
   if(err){
     return console.log(err);
   }
